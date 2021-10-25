@@ -1,4 +1,6 @@
 
+
+# Roleplay menu settings
 RolePlay_Menu_Settings:
 
   # Size of the menu (must be multiple of 9)
@@ -11,13 +13,21 @@ RolePlay_Menu_Settings:
 
   # Settings for visibility of other players
   Visibility_Button_Settings:
+    # Slot of the setting
     Slot: 11
+    # Should plugin add this setting in menu?
     Use: true
+  # Settings for Character Redirection
   Character_Information_Button_Settings:
+    # Slot of the setting
     Slot: 13
+  # Settings for Ignoring Roleplay chat
   Ignore_Local_Chat_Button_Settings:
+    # Slot of the setting
     Slot: 14
+  # Settings for changing hearing distance (Roleplay chat)
   Hearing_Distance_Button_Settings:
+    # Slot of the setting
     Slot: 12
 
 
