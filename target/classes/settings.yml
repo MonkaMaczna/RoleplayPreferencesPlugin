@@ -1,0 +1,30 @@
+
+RolePlay_Menu_Settings:
+
+  # Size of the menu (must be multiple of 9)
+  Menu_Size: 27
+
+  # Command used to open menu
+  Command: "rpmenu"
+  # Should plugin use player heads in menu? (not recommended for servers without online mode)
+  Player_Heads: true
+
+  # Settings for visibility of other players
+  Visibility_Button_Settings:
+    Slot: 11
+    Use: true
+  Character_Information_Button_Settings:
+    Slot: 13
+  Ignore_Local_Chat_Button_Settings:
+    Slot: 14
+  Hearing_Distance_Button_Settings:
+    Slot: 12
+
+
+
+
+# DO NOT CHANGE THESE SETTINGS!!!
+Prefix: "&l&7[&l&bRoleplay &l&aCharacter Information&l&7]"
+Log_Lag_Over_Millis: 100
+Debug: [ ]
+Version: 3

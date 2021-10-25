@@ -1,0 +1,40 @@
+
+
+# Roleplay menu settings
+RolePlay_Menu_Settings:
+
+  # Size of the menu (must be multiple of 9)
+  Menu_Size: 27
+
+  # Command used to open menu
+  Command: "rpmenu"
+  # Should plugin use player heads in menu? (not recommended for servers without online mode)
+  Player_Heads: true
+
+  # Settings for visibility of other players
+  Visibility_Button_Settings:
+    # Slot of the setting
+    Slot: 11
+    # Should plugin add this setting in menu?
+    Use: true
+  # Settings for Character Redirection
+  Character_Information_Button_Settings:
+    # Slot of the setting
+    Slot: 13
+  # Settings for Ignoring Roleplay chat
+  Ignore_Local_Chat_Button_Settings:
+    # Slot of the setting
+    Slot: 14
+  # Settings for changing hearing distance (Roleplay chat)
+  Hearing_Distance_Button_Settings:
+    # Slot of the setting
+    Slot: 12
+
+
+
+
+# DO NOT CHANGE THESE SETTINGS!!!
+Prefix: "&l&7[&l&bRoleplay &l&aCharacter Information&l&7]"
+Log_Lag_Over_Millis: 100
+Debug: [ ]
+Version: 3
