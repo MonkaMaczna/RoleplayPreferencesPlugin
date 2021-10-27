@@ -6,6 +6,18 @@ RolePlay_Menu_Settings:
   # Size of the menu (must be multiple of 9)
   Menu_Size: 27
 
+  # Permission to open menu using command (can't be empty)
+  Permission: "roleplaymenu.open"
+
+  # Settings for a sound that plays when menu is opened using command
+  Opening_Settings:
+  # Sound that plays when menu is opened
+  Sound: BLOCK_ANVIL_FALL
+  # Volume of the sound
+  Volume: 3
+  # Pitch of the sound
+  Pitch: 0
+
   # Command used to open menu
   Command: "rpmenu"
   # Should plugin use player heads in menu? (not recommended for servers without online mode)
@@ -17,18 +29,108 @@ RolePlay_Menu_Settings:
     Slot: 11
     # Should plugin add this setting in menu?
     Use: true
+    # What material should category be?
+    Material: LIME_DYE
   # Settings for Character Redirection
+    True_Material: LIME_DYE
+    False_Material: GRAY_DYE
   Character_Information_Button_Settings:
     # Slot of the setting
     Slot: 13
+    # Material of the setting (if player_heads are false)
+    Material: ENCHANTED_BOOK
+
   # Settings for Ignoring Roleplay chat
   Ignore_Local_Chat_Button_Settings:
     # Slot of the setting
     Slot: 14
+    True_Material: RED_DYE
+    False_Material: PURPLE_DYE
   # Settings for changing hearing distance (Roleplay chat)
   Hearing_Distance_Button_Settings:
     # Slot of the setting
     Slot: 12
+    # Material of the setting
+    Material: NOTE_BLOCK
+    # Maximum hearing distance
+    Max: 500
+    # Minimum hearing distance
+    Min: 5
+    # Amount that one click adds
+    Adds: 1
+
+# Language setting for every text message except update checker
+Roleplay_Menu_Language_Preferences:
+
+  # Title of the menu
+  Menu_Title: "&bPreferences..."
+
+  # Language settings for Visibility Button
+  Visibility_Button_Language:
+    # Title of the button
+    Title: "&aVisibility settings"
+    # Three lines of the lore of button
+    # (planned to add option to change line amount in future)
+    Lore1: "&bShould you be able to see"
+    Lore2: "&bother players?"
+    Lore3: "&bVisibility: "
+    # Definition of visibility - true
+    Definition_Of_True: "&aVisible"
+    # Definition of visibility - false
+    Definition_Of_False: "&cNot visible"
+    # Animation (Animated Title) when changed option to true
+    Animation_Of_Button_To_True: "&aVisibility: Visible"
+    # Animation (Animated Title) when changed option to false
+    Animation_Of_Button_To_False: "&aVisibility: Invisible"
+  # Language settings for Character Information Button
+  Character_Information_Button_Language:
+    # Title of the button
+    Title: "&aCharacter Information"
+    # Four lines of the lore of button
+    # (planned to add option to change line amount in future)
+    Lore1: "&bCheck your character information by"
+    Lore2: "&bclicking this button or"
+    Lore3: "&busing command"
+    Lore4: "&b/character info"
+  # Language settings for Ignore Local Chat Button
+  Ignore_Local_Chat_Button_Language:
+    # Title of the button
+    Title: "&aRP Settings"
+    # Two lines of the lore of button
+    # (planned to add option to change line amount in future)
+    Lore1: "&bShould you receive RP messages?"
+    Lore2: "&bSetting: "
+    # Definition of ignoring - true
+    Definition_Of_True: "&cIgnoring RP Chat"
+    # Definition of ignoring - false
+    Definition_Of_False: "&aSeeing RP Chat"
+    # Animation (Animated Title) when changed option to true
+    Animation_Of_Button_To_True: "&aChat RP: Ignored."
+    # Animation (Animated Title) when changed option to false
+    Animation_Of_Button_To_False: "&aChat RP: Visible."
+  # Language settings for Hearing Distance Button
+  Hearing_Distance_Button_Language:
+    # Title of the button
+    Title: "&aChange your hearing"
+    # Eight lines of the lore of button
+    # (planned to add option to change line amount in future)
+    Lore1: ""
+    Lore2: "&bChange the distance of hearing"
+    Lore3: "&bRoleplay Chat"
+    Lore4: ""
+    Lore5: "&bCurrent: "
+    Lore6: ""
+    Lore7: "&8(&bMouse click&8)"
+    Lore8: "&b< -1 +1 >"
+    # Animation (Animated Title) of the menu when updated distance
+    Animation_Of_Button: "&aChanged hearing to "
+
+
+
+
+
+
+
 
 
 
@@ -37,4 +139,4 @@ RolePlay_Menu_Settings:
 Prefix: "&l&7[&l&bRoleplay &l&aCharacter Information&l&7]"
 Log_Lag_Over_Millis: 100
 Debug: [ ]
-Version: 3
+Version: 4

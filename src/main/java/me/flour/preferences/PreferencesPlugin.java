@@ -1,9 +1,9 @@
 package me.flour.preferences;
 
+import me.flour.character.Events.RightClickEvent;
+import me.flour.character.UpdateChecker;
 import me.flour.preferences.Commands.MenuCommand;
 import me.flour.preferences.settings.Settings;
-import me.flour.preferences.Events.RightClickEvent;
-import org.bukkit.command.ConsoleCommandSender;
 import org.mineacademy.fo.Common;
 import org.mineacademy.fo.plugin.SimplePlugin;
 import org.mineacademy.fo.settings.YamlStaticConfig;
@@ -30,6 +30,18 @@ public class PreferencesPlugin extends SimplePlugin {
 			final org.mineacademy.fo.metrics.Metrics metrics = new org.mineacademy.fo.metrics.Metrics(this, 13129);
 			Common.log("&5[Roleplay Preferences Plugin] Loaded Preferences Plugin. ", "&5Plugin was made by Wheat Flour");
 
+			if (me.flour.character.settings.Settings.CHECK_UPDATE) {
+				new UpdateChecker(this, 97138).getVersion(version -> {
+					if (this.getDescription().getVersion().equals(version)) {
+						Common.log("&c[Roleplay Preferences Plugin] &cThere aren't any new updates for Preferences Plugin");
+					} else {
+						Common.log("&cThere's a new update avalaible for Preferences Plugin",
+								"&cLink to update: https://www.spigotmc.org/resources/roleplay-preferences-plugin.97138/",
+								"&cPlease download regularly updates because they are fixing many bugs and add many new features.");
+
+					}
+				});
+			}
 
 			registerCommand(new MenuCommand(Settings.MENUCOMMAND));
 			registerEvents(new RightClickEvent());

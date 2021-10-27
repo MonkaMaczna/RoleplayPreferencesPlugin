@@ -5,7 +5,6 @@ me/flour/preferences/Commands/MenuCommand.class
 me/flour/preferences/menu/MainMenu$4.class
 me/flour/preferences/Events/JoinEvent.class
 me/flour/preferences/settings/Settings.class
-me/flour/preferences/Events/RightClickEvent.class
 me/flour/preferences/menu/MainMenu$2.class
 me/flour/preferences/UpdateChecker.class
 me/flour/preferences/menu/MainMenu.class

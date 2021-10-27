@@ -37,10 +37,10 @@ public class MainMenu extends Menu {
 
 	public MainMenu(final Player player) {
 
-		setSize(9*3);
+		setSize(Settings.MENU_SIZE);
 
 
-		setTitle("&bPreferences...");
+		setTitle(Settings.MENU_TITLE);
 
 
 
@@ -53,15 +53,15 @@ public class MainMenu extends Menu {
 
 
 				if (clickType.isRightClick()) {
-					nextDistance = MathUtil.range(cache.getHearingDistance() + 1 , 5, 1000);
+					nextDistance = MathUtil.range(cache.getHearingDistance() + Settings.HEARING_ADD , Settings.HEARING_MIN, Settings.HEARING_MAX);
 				} else if (clickType.isLeftClick()) {
-					nextDistance = MathUtil.range(cache.getHearingDistance() - 1 , 5, 1000);
+					nextDistance = MathUtil.range(cache.getHearingDistance() - Settings.HEARING_ADD , Settings.HEARING_MIN, Settings.HEARING_MAX);
 				} else {
-					nextDistance = cache.getHearingDistance() + 1;
+					nextDistance = cache.getHearingDistance() + Settings.HEARING_ADD;
 				}
 
 				cache.setHearingDistance(nextDistance);
-				restartMenu("&aChanged hearing to " + nextDistance);
+				restartMenu(Settings.HEARING_ANIMATE + nextDistance);
 				redraw();
 
 			}
@@ -70,16 +70,16 @@ public class MainMenu extends Menu {
 			public ItemStack getItem() {
 				final PlayerCache cache = PlayerCache.getCache(getViewer());
 
-				return ItemCreator.of(CompMaterial.NOTE_BLOCK,
-								"&aChange your hearing",
-								"",
-								"&bChange the distance of hearing",
-								"&bRoleplay Chat",
-								"",
-								"&bCurrent: " + cache.getHearingDistance(),
-								"",
-								"&8(&bMouse click&8)",
-								"&b< -1 +1 >")
+				return ItemCreator.of(Settings.HEARING_MATERIAL,
+								Settings.HEARING_TITLE,
+								Settings.HEARING_LORE1,
+								Settings.HEARING_LORE2,
+								Settings.HEARING_LORE3,
+								Settings.HEARING_LORE4,
+								Settings.HEARING_LORE5 + cache.getHearingDistance(),
+								Settings.HEARING_LORE6,
+								Settings.HEARING_LORE7,
+								Settings.HEARING_LORE8)
 
 						.build().make();
 			}
@@ -91,10 +91,10 @@ public class MainMenu extends Menu {
 				PlayerCache cache = PlayerCache.getCache(player);
 				if (cache.getIgnoreRP() == false) {
 					cache.setIgnoreRP(true);
-					restartMenu("&aChat RP: Ignored.");
+					restartMenu(Settings.IGNORE_LOCAL_ANIMATE_TRUE);
 				} else if (cache.getIgnoreRP() == true) {
 					cache.setIgnoreRP(false);
-					restartMenu("&aChat RP: Visible.");
+					restartMenu(Settings.IGNORE_LOCAL_ANIMATE_FALSE);
 				}
 				redraw();
 			}
@@ -102,9 +102,9 @@ public class MainMenu extends Menu {
 			@Override
 			public ItemStack getItem() {
 				PlayerCache cache = PlayerCache.getCache(player);
-				return ItemCreator.of((cache.getIgnoreRP() ? CompMaterial.RED_DYE : CompMaterial.PURPLE_DYE),"&aRP Settings",
-						"&bShould you receive RP messages?",
-						"&bSetting: " + (cache.getIgnoreRP() ? "&cIgnoring RP Chat" : "&aSeeing RP Chat")).build().make();
+				return ItemCreator.of((cache.getIgnoreRP() ? Settings.IGNORE_LOCAL_TRUE_MATERIAL : Settings.IGNORE_LOCAL_FALSE_MATERIAL),Settings.IGNORE_LOCAL_TITLE,
+						Settings.IGNORE_LOCAL_LORE1,
+						Settings.IGNORE_LOCAL_LORE2 + (cache.getIgnoreRP() ? Settings.IGNORE_LOCAL_DEF_TRUE : Settings.IGNORE_LOCAL_DEF_FALSE)).build().make();
 			}
 		};
 
@@ -117,17 +117,17 @@ public class MainMenu extends Menu {
 			@Override
 			public ItemStack getItem() {
 				if (Settings.PLAYERHEADS) {
-					return ItemCreator.of(CompMaterial.PLAYER_HEAD,"&aCharacter Information",
-							"&bCheck your character information by",
-							"&bclicking this button or",
-							"&busing command",
-							"&b/character info").skullOwner(player.getName()).build().make();
+					return ItemCreator.of(CompMaterial.PLAYER_HEAD,Settings.CHARACTER_TITLE,
+							Settings.CHARACTER_LORE1,
+							Settings.CHARACTER_LORE2,
+							Settings.CHARACTER_LORE3,
+							Settings.CHARACTER_LORE4).skullOwner(player.getName()).build().make();
 				} else {
-					return ItemCreator.of(CompMaterial.ENCHANTED_BOOK,"&aCharacter Information",
-							"&bCheck your character information by",
-							"&bclicking this button or",
-							"&busing command",
-							"&b/character info").flag(CompItemFlag.HIDE_ENCHANTS).build().make();
+					return ItemCreator.of(Settings.CHARACTER_MATERIAL,Settings.CHARACTER_TITLE,
+							Settings.CHARACTER_LORE1,
+							Settings.CHARACTER_LORE2,
+							Settings.CHARACTER_LORE3,
+							Settings.CHARACTER_LORE4).flag(CompItemFlag.HIDE_ENCHANTS).build().make();
 				}
 
 			}
@@ -144,13 +144,13 @@ public class MainMenu extends Menu {
 					for (Player players : Bukkit.getOnlinePlayers()) {
 						player.hidePlayer(PreferencesPlugin.getPlugin(PreferencesPlugin.class),players);
 						cache.setVisibility(false);
-						restartMenu("&aVisibility: Invisible");
+						restartMenu(Settings.VISIBILITY_ANIMATE_FALSE);
 					}
 				} else if (cache.getVisibility() == false) {
 					for (Player players : Bukkit.getOnlinePlayers()) {
 						player.showPlayer(PreferencesPlugin.getPlugin(PreferencesPlugin.class),players);
 						cache.setVisibility(true);
-						restartMenu("&aVisibility: Visible");
+						restartMenu(Settings.VISIBILITY_ANIMATE_TRUE);
 					}
 				}
 				redraw();
@@ -162,10 +162,10 @@ public class MainMenu extends Menu {
 
 			@Override
 			public ItemStack getItem() {
-				return ItemCreator.of((me.flour.preferences.data.PlayerCache.getCache(player).getVisibility() ? CompMaterial.LIME_DYE : CompMaterial.GRAY_DYE),"&aVisibility settings",
-						"&bShould you be able to see",
-						"&bother players?",
-						"&bVisibility: " + (PlayerCache.getCache(player).getVisibility() ? "&aVisible" : "&cNot visible"
+				return ItemCreator.of((me.flour.preferences.data.PlayerCache.getCache(player).getVisibility() ? Settings.VISIBILITY_TRUE_MAT : Settings.VISIBILITY_FALSE_MAT),Settings.VISIBILITY_TITLE,
+						Settings.VISIBILITYLORE1,
+						Settings.VISIBILITYLORE2,
+						Settings.VISIBILITYLORE3 + (PlayerCache.getCache(player).getVisibility() ? Settings.VISIBILITYDEFTRUE : Settings.VISIBILITYDEFFALSE
 						)).build().make();
 			}
 		};

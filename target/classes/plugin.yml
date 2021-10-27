@@ -1,6 +1,6 @@
 
 name: RoleplayPreferencesPlugin
-version: 1.0.0
+version: 1.0.1
 main: me.flour.preferences.PreferencesPlugin
 author: Wheat
 api-version: 1.13
