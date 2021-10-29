@@ -13,7 +13,12 @@ public class MenuCommand extends SimpleCommand {
 	@Override
 	protected void onCommand() {
 		checkPerm(Settings.PERM);
-		getPlayer().playSound(getPlayer().getLocation(), Settings.OPEN_SOUND.getSound(), Settings.OPEN_VOLUME,Settings.OPEN_PITCH);
-		new MainMenu(getPlayer()).displayTo(getPlayer());
+		if (args.length > 0) {
+			getPlayer().playSound(getPlayer().getLocation(), Settings.OPEN_SOUND.getSound(), Settings.OPEN_VOLUME,Settings.OPEN_PITCH);
+			new MainMenu(getPlayer()).displayTo(getPlayer());
+		}
+
+
 	}
+
 }

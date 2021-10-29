@@ -1,8 +1,8 @@
-/Users/maka/Documents/GitHub/RoleplayPreferencesPlugin/src/main/java/me/flour/preferences/data/PlayerCache.java
-/Users/maka/Documents/GitHub/RoleplayPreferencesPlugin/src/main/java/me/flour/preferences/settings/Settings.java
-/Users/maka/Documents/GitHub/RoleplayPreferencesPlugin/src/main/java/me/flour/preferences/menu/MainMenu.java
-/Users/maka/Documents/GitHub/RoleplayPreferencesPlugin/src/main/java/me/flour/preferences/API/PreferencesAPI.java
-/Users/maka/Documents/GitHub/RoleplayPreferencesPlugin/src/main/java/me/flour/preferences/Commands/MenuCommand.java
-/Users/maka/Documents/GitHub/RoleplayPreferencesPlugin/src/main/java/me/flour/preferences/PreferencesPlugin.java
-/Users/maka/Documents/GitHub/RoleplayPreferencesPlugin/src/main/java/me/flour/preferences/UpdateChecker.java
-/Users/maka/Documents/GitHub/RoleplayPreferencesPlugin/src/main/java/me/flour/preferences/Events/JoinEvent.java
+/workspaces/RoleplayPreferencesPlugin/src/main/java/me/flour/preferences/data/PlayerCache.java
+/workspaces/RoleplayPreferencesPlugin/src/main/java/me/flour/preferences/Events/JoinEvent.java
+/workspaces/RoleplayPreferencesPlugin/src/main/java/me/flour/preferences/menu/MainMenu.java
+/workspaces/RoleplayPreferencesPlugin/src/main/java/me/flour/preferences/settings/Settings.java
+/workspaces/RoleplayPreferencesPlugin/src/main/java/me/flour/preferences/API/PreferencesAPI.java
+/workspaces/RoleplayPreferencesPlugin/src/main/java/me/flour/preferences/UpdateChecker.java
+/workspaces/RoleplayPreferencesPlugin/src/main/java/me/flour/preferences/PreferencesPlugin.java
+/workspaces/RoleplayPreferencesPlugin/src/main/java/me/flour/preferences/Commands/MenuCommand.java

@@ -1,12 +1,12 @@
 me/flour/preferences/API/PreferencesAPI.class
 me/flour/preferences/PreferencesPlugin.class
-me/flour/preferences/menu/MainMenu$3.class
 me/flour/preferences/Commands/MenuCommand.class
+me/flour/preferences/menu/MainMenu$3.class
 me/flour/preferences/menu/MainMenu$4.class
 me/flour/preferences/Events/JoinEvent.class
 me/flour/preferences/settings/Settings.class
 me/flour/preferences/menu/MainMenu$2.class
 me/flour/preferences/UpdateChecker.class
-me/flour/preferences/menu/MainMenu.class
 me/flour/preferences/data/PlayerCache.class
+me/flour/preferences/menu/MainMenu.class
 me/flour/preferences/menu/MainMenu$1.class

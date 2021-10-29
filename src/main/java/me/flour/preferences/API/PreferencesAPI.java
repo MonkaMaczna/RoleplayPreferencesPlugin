@@ -21,5 +21,6 @@ public class PreferencesAPI {
 		PlayerCache cache = PlayerCache.getCache(player);
 		return  cache.getHearingDistance();
 	}
+	
 
 }

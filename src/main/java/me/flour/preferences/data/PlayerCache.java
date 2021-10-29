@@ -20,6 +20,7 @@ public class PlayerCache extends YamlSectionConfig implements ConfigSerializable
 	Boolean visibility;
 	Boolean ignoreRP;
 	Integer hearingDistance;
+	
 
 
 
